@@ -1,4 +1,4 @@
-# Front-end Style Guide
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet"># Front-end Style Guide
 
 ## Layout
 
