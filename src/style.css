@@ -26,22 +26,23 @@ body {
   line-height: 1.4;
   background-color: var(--grey-100);
   min-height: 100vh;
-  display: grid;
-  place-items: center;
-  padding: 40px 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 70px 24px;
 }
 
-/* 1. Default desktop layout */
 main {
-  max-width: 1110px;
+  width: 100%;
+  max-width: 327px;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 30px;
+  grid-template-columns: 1fr;
+  gap: 24px;
 }
 
 .testimonial {
   border-radius: 8px;
-  padding: 26px 32px;
+  padding: 32px;
   box-shadow: 40px 60px 50px -40px rgba(72, 85, 106, 0.25);
   display: flex;
   flex-direction: column;
@@ -85,15 +86,12 @@ main {
   opacity: 0.7;
 }
 
-/* Card positions for desktop */
 .testimonial.one {
-  grid-column: 1 / span 2;
-  grid-row: 1;
   background-color: var(--purple-500);
   color: var(--white);
   background-image: url("/images/bg-pattern-quotation.svg");
   background-repeat: no-repeat;
-  background-position: top 0 right 80px;
+  background-position: top 0 right 24px;
 }
 
 .testimonial.one .user-avatar {
@@ -101,22 +99,16 @@ main {
 }
 
 .testimonial.two {
-  grid-column: 3;
-  grid-row: 1;
   background-color: var(--grey-500);
   color: var(--white);
 }
 
 .testimonial.three {
-  grid-column: 1;
-  grid-row: 2;
   background-color: var(--white);
   color: var(--grey-500);
 }
 
 .testimonial.four {
-  grid-column: 2 / span 2;
-  grid-row: 2;
   background-color: var(--dark-blue);
   color: var(--white);
 }
@@ -126,35 +118,45 @@ main {
 }
 
 .testimonial.five {
-  grid-column: 4;
-  grid-row: 1 / span 2;
   background-color: var(--white);
   color: var(--grey-500);
 }
 
-/* 2. Mobile override: max-width media query */
-@media (max-width: 899px) {
+@media (min-width: 900px) {
   body {
-    padding: 70px 24px;
+    padding: 40px 24px;
   }
 
   main {
-    max-width: 327px;
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  /* Critical: clear every single grid coordinate set above */
-  .testimonial.one,
-  .testimonial.two,
-  .testimonial.three,
-  .testimonial.four,
-  .testimonial.five {
-    grid-column: auto;
-    grid-row: auto;
+    max-width: 1110px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+    gap: 30px;
   }
 
   .testimonial.one {
-    background-position: top 0 right 24px;
+    grid-column: 1 / span 2;
+    grid-row: 1;
+    background-position: top 0 right 80px;
+  }
+
+  .testimonial.two {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .testimonial.three {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .testimonial.four {
+    grid-column: 2 / span 2;
+    grid-row: 2;
+  }
+
+  .testimonial.five {
+    grid-column: 4;
+    grid-row: 1 / span 2;
   }
 }
